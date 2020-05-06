@@ -4,7 +4,7 @@
  * Plugin Name: Featured Gallery
  * Description: Featured Gallery support
  * Plugin URI: https://github.com/featured-gallery
- * Version: 1.0.1
+ * Version: 1.0.2
  * Author: codersuraz
  * Author URI: http://facebook.com/suraj.khanal.311
  * Text Domain: cdx
@@ -22,7 +22,7 @@ class FeaturedGalleryElement {
 	 *
 	 * @var string The plugin version.
 	 */
-	const VERSION = '1.0.1';
+	const VERSION = '1.0.2';
 
 	/**
 	 * Minimum Elementor Version

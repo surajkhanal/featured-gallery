@@ -149,7 +149,7 @@ class THUpdater {
                 // Add our plugin information
                 $response->last_updated = $this->githubAPIResult->published_at;
                 $response->slug = $this->slug;
-                $response->plugin_name  = $this->pluginData["Name"];
+                $response->name  = $this->pluginData["Name"];
                 $response->version = $this->githubAPIResult->tag_name;
                 $response->author = $this->pluginData["AuthorName"];
                 $response->homepage = $this->pluginData["PluginURI"];
@@ -168,8 +168,8 @@ class THUpdater {
                 $response->download_link = $downloadLink;
  
                 // Load Parsedown
-                require_once __DIR__ . DIRECTORY_SEPARATOR . 'Parsedown.php';
- 
+                require_once __DIR__ . DIRECTORY_SEPARATOR . 'ParsedDown.php';
+
                 // Create tabs in the lightbox
                 $response->sections = array(
                         'Description'   => $this->pluginData["Description"],
