@@ -117,13 +117,16 @@ class Elementor_featured_gallery_Widget extends \Elementor\Widget_Base {
 								?>
 							<div class="swiper-slide">
 								<figure>
-									<img src="<?php echo esc_url($image->url); ?>"></div>
+									<a href="<?php the_permalink(); ?>">
+										<img src="<?php echo esc_url($image->url); ?>">
+									</a>
 									<?php if(!empty($image->description)): ?>
 									<figcaption class="slider-caption">
 										<?php //echo esc_html($image->description); ?>
 									</figcaption>
 									<?php endif; ?>
 								</figure>
+							</div>
 							<?php endforeach; ?>
 						</div>
 						<!-- Add Arrows -->

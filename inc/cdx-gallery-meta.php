@@ -98,7 +98,7 @@ class CDXGalleryField
             }
         }
 
-        update_post_meta($post_id, 'cdx_gallery', wp_json_encode($new_images));
+        update_post_meta($post_id, 'cdx_gallery', wp_json_encode($new_images, JSON_UNESCAPED_UNICODE));
 
     }
 

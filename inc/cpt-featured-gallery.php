@@ -47,6 +47,7 @@ function cdx_cpt_featured_gallery() {
 		'show_in_nav_menus'     => true,
 		'can_export'            => true,
 		'has_archive'           => true,
+		'rewrite'               => array('slug' => 'multimedia/visual-story'),
 		'exclude_from_search'   => false,
 		'publicly_queryable'    => true,
 		'capability_type'       => 'page',

@@ -4,7 +4,7 @@
  * Plugin Name: Featured Gallery
  * Description: Featured Gallery support
  * Plugin URI: https://github.com/featured-gallery
- * Version: 1.0.0
+ * Version: 1.0.1
  * Author: codersuraz
  * Author URI: http://facebook.com/suraj.khanal.311
  * Text Domain: cdx
@@ -22,7 +22,7 @@ class FeaturedGalleryElement {
 	 *
 	 * @var string The plugin version.
 	 */
-	const VERSION = '1.0.0';
+	const VERSION = '1.0.1';
 
 	/**
 	 * Minimum Elementor Version
@@ -130,7 +130,7 @@ class FeaturedGalleryElement {
         new CDXGalleryField(array('featured_gallery'));
         
         if ( is_admin() ) {
-            // new THUpdater( __FILE__, 'surajkhanal', "featured-gallery" );
+            new THUpdater( __FILE__, 'surajkhanal', "featured-gallery" );
         }
 
         // Check if Elementor installed and activated
@@ -153,9 +153,24 @@ class FeaturedGalleryElement {
 
         add_action('wp_enqueue_scripts', array($this, 'register_assets'));
         add_action( 'elementor/widgets/widgets_registered', array( $this, 'init_widgets' ) );
-        
+        add_filter( "the_content", array($this, "get_custom_post_type_content") );
         
     }
+
+    public function get_custom_post_type_content($content) {
+        global $post;
+   
+        if ($post->post_type == 'featured_gallery') {
+            $images = cdx_featured_gallery($post->ID);
+            foreach ($images as $value) {
+                $image = json_decode($value);
+                $imgTag = '<figure class="featured_gallery_img"><img src="'.$image->url.'"><figcaption>'.($image->description).'</figcaption></figure>';
+                $content .= $imgTag;
+            }
+        }
+
+        return $content;
+   }
   
 
     /**
