@@ -4,7 +4,7 @@
  * Plugin Name: Featured Gallery
  * Description: Featured Gallery support
  * Plugin URI: https://github.com/featured-gallery
- * Version: 1.0.2
+ * Version: 1.0.3
  * Author: codersuraz
  * Author URI: http://facebook.com/suraj.khanal.311
  * Text Domain: cdx
