@@ -67,8 +67,8 @@ function renderMediaUploader() {
  * 
  **/ 
 function addImage(img) {
-    console.log(img);
-    $('.img__grid').append(`
+    
+    jQuery('.img__grid').append(`
                 <div class="img-block" id="img-${img.id}">
                     <button type="button" class="btn-remove" onclick="removeImg(${img.id})"><i class="dashicons dashicons-trash"></i></button>
                     <input type="hidden" name="cdx_img[]" value='${JSON.stringify(img)}'>
@@ -80,7 +80,7 @@ function addImage(img) {
 
 // remove image from the grid
 function removeImg(id) {
-    $(`#img-${id}`).fadeOut(800).remove();
+    jQuery(`#img-${id}`).fadeOut(800).remove();
 }
 
 (function( $ ) {
